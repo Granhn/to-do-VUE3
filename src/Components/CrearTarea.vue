@@ -11,14 +11,14 @@
         nombreTarea.value = "";
         descripcionTarea.value = "";
     }
-    const crearTarea= () =>{
+    const crearTarea = () =>{
         tareasStore.agregarTarea({
             nombreTarea: nombreTarea.value,
             descripcionTarea: descripcionTarea.value
         });
         limpiar();
     }
-    const permitirCrearTarea = computed(() =>{
+    const tareaValida = computed(() =>{
         if ( (descripcionTarea.value && nombreTarea.value) === '' )  return true
         else return false
     })
@@ -38,7 +38,7 @@
             <input type="text" class="form-control" id="nombreTarea" placeholder="Ingresa el nombre de tu tarea" v-model="nombreTarea">
             <label for="exampleFormControlTextarea1" class="form-label mt-3">Descripcion de la tarea</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Ingresa la descripcion de tu tarea" rows="3" v-model="descripcionTarea"></textarea>
-            <button class="btn btn-primary mt-3" @click="crearTarea" :disabled="permitirCrearTarea">Crear tarea</button>
+            <button class="btn btn-primary mt-3" @click="crearTarea" :disabled="tareaValida">Crear tarea</button>
             <button class="btn btn-warning mt-3 ms-3" @click="limpiar">Limpiar</button>
         </div>
   </div>

@@ -10,6 +10,7 @@
   <Navegacion></Navegacion>
   <CrearTarea></CrearTarea>
   <RouterView></RouterView>
+  
 
 </template>
 
