@@ -13,7 +13,9 @@ export const useTareasStore = defineStore('store-tareas', () => {
 
     const tareas = ref([]);
     const agregarTarea = tarea => tareas.value.push(tarea)
-    const eliminarTarea = tareaABorrar => tareas.value = tareas.value.filter( tarea => tarea != tareaABorrar )
+    const eliminarTarea = (idTarea) => {
+        tareas.value = tareas.value.filter( tarea => tarea.id !== idTarea )
+    }
     const editarTarea = () => console.log("Tarea editada!!")
     
     return { tareas, agregarTarea, eliminarTarea, editarTarea }

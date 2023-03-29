@@ -14,7 +14,8 @@
     const crearTarea = () =>{
         tareasStore.agregarTarea({
             nombreTarea: nombreTarea.value,
-            descripcionTarea: descripcionTarea.value
+            descripcionTarea: descripcionTarea.value,
+            id: Math.random().toString(16).slice(2)
         });
         limpiar();
     }

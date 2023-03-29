@@ -13,13 +13,15 @@
 
 <template>
     <h3 style="text-align: center; margin-bottom: 2vw;">Tareas</h3>
+
     <ul class="flex">
-        <li v-for="(tarea,index) in tareas" key="index" class="hijo">
+        <article v-for="(tarea,index) in tareas" key="index" class="hijo">
             <TareaCard
                 :nombreTarea="tarea.nombreTarea"
                 :descripcionTarea="tarea.descripcionTarea"
+                :id="tarea.id"
             />
-        </li>
+        </article>
     </ul>
 </template>
 
@@ -29,5 +31,6 @@
         display: flex;
         flex-flow: row wrap;
         justify-content:  space-evenly;
+        margin: 5% auto;
     }
 </style>
