@@ -4,14 +4,19 @@ const router = createRouter({
     linkActiveClass: "active",
     routes: [
         {
-            path:'/', 
+            path:'/',
             name:'Home',
-            component: () => import('../Components/Prueba.vue')
+            component: () => import('../Views/Home.vue')
         },
         {
-            path:'/2', 
+            path:'/tareas', 
+            name:'Tareas',
+            component: () => import('../Views/Tareas.vue')
+        },
+        {
+            path:'/tareas/eliminadas', 
             name:'Prueba2',
-            component: () => import('../Components/Prueba2.vue')
+            component: () => import('../Views/TareasEliminadas.vue')
         }
     ]
   })
